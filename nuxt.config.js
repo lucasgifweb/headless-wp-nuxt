@@ -3,7 +3,7 @@ let dynamicRoutes = () => {
   const routes = axios
     .get("https://www.linksmedicus.com/wp-json/wp/v2/news")
     .then(res => {
-      return res.data.map(post => `/${post.slug}`)
+      return res.data.map(post)
     })
   console.log(routes)
   return routes
