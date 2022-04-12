@@ -1,9 +1,9 @@
 import axios from "axios"
 let dynamicRoutes = () => {
   const routes = axios
-    .get("https://www.linksmedicus.com/wp-json/wp/v2/news?specialties=365&page=1&per_page=20")
+    .get("https://www.linksmedicus.com/wp-json/wp/v2/news")
     .then(res => {
-      return res.data.map(post => `/news/${post.slug}`)
+      return res.data.map(post => `/${post.slug}`)
     })
   console.log(routes)
   return routes
